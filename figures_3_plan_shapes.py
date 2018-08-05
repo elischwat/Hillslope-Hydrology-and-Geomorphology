@@ -59,6 +59,6 @@ for i in range(1,4):
 
 #plt.suptitle('Contour Width Functions for Three Hillslope Plan Shapes',
 #             fontsize=fontSmall)
-plt.savefig('images/3_plan_shapes.jpeg')
+#plt.savefig('images/3_plan_shapes.jpeg')
 plt.show()
 

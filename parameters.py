@@ -45,9 +45,9 @@ Td = 3600.0*360
 tResWater = int(Td/dtWater)
 k = 10**-3
 Tr = 3600.0*3.0 #3 hour storm at rate of...
-N = 0.01/3600/4 #1 cm per hour
+N = 0.01/3600 #1 cm per hour
 Nd = -((0.001)/3600) # 1mm per hour or 2.7E-7 m/s
-stormsPerYear = 2*52*4
+stormsPerYear = 2*52
 
 a = 0; B = 0
 if curvature == 'convex':
