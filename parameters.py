@@ -1,10 +1,10 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-"""
+'''
 File containing parameters for all perched water table files.
 Created on Wed Jan 17 10:02:55 2018
 @author: elischwat
-"""
+'''
 import numpy as np
 import matplotlib.pyplot as plt
 plt.rcParams["font.family"] = "Times New Roman"
@@ -38,9 +38,15 @@ As = 6*Ds**2 #cubic
 M = 263.02
 rho = 2.62*10**6
 
-
-# WATER TABLE STUFF:
+'''
+WATER TABLE STUFF:
+'''
+# Time step for numerical modelling of fluid flow (seconds)
 dtWater = 361
+
+#
+# the length of time we allow drainage to occurr for numerical modelling purposes (seconds)
+# Td is very large so the water table always recedes beneath the soil-saprolite interface
 Td = 3600.0*360
 tResWater = int(Td/dtWater)
 k = 10**-3
