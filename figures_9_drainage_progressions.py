@@ -13,8 +13,8 @@ from parameters import *
 plt.figure(figsize=(10,3))
 
 # PARAMETERS:
-#timeArray = [0, 6*3600, 12*3600, 24*3600]
-timeArray = [24*3600]
+timeArray = [0, 6*3600, 12*3600, 24*3600]
+# timeArray = [24*3600]
 plotXMin = -3
 plotXMax = L
 plotYMin = 0
@@ -25,27 +25,19 @@ plotYMax = 0.06
 concaveCon = []
 concaveUni = []
 concaveDiv = []
-curvature = 'concave'
+planarCon = []
+planarUni = []
+planarDiv = []
+convexCon = []
+convexUni = []
+convexDiv = []
 for drainTime in timeArray:
     concaveCon.append(plotWaterTable('con', 'concave', drainTime)[0:2])
     concaveUni.append(plotWaterTable('uni', 'concave', drainTime)[0:2])
     concaveDiv.append(plotWaterTable('div', 'concave', drainTime)[0:2])
-
-# planar
-planarCon = []
-planarUni = []
-planarDiv = []
-for drainTime in timeArray:
     planarCon.append(plotWaterTablePlanar('con', drainTime)[0:2])
     planarUni.append(plotWaterTablePlanar('uni', drainTime)[0:2])
     planarDiv.append(plotWaterTablePlanar('div', drainTime)[0:2])
-
-# convex
-convexCon = []
-convexUni = []
-convexDiv = []
-curvature = 'convex'
-for drainTime in timeArray:
     convexCon.append(plotWaterTable('con', 'convex', drainTime)[0:2])
     convexUni.append(plotWaterTable('uni', 'convex', drainTime)[0:2])
     convexDiv.append(plotWaterTable('div', 'convex', drainTime)[0:2])
