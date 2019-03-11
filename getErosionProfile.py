@@ -12,10 +12,11 @@ import numpy as np
 from parameters import *
 from exposure import exposure
 from getDenudationRate import getDenudationRate
+from DefaultParams import DenudationParameters
 
-timeLength = 1 #year
+timeLength = 1 #yeara
 def convert(exp):
-    return stormsPerYear*(exp + Tr)*getDenudationRate()*timeLength
+    return stormsPerYear*(exp + Tr)*getDenudationRate(*(DenudationParameters.kwargs_array)*timeLength
 
 ## Plan = con, div, uni
 ## Profile = convex,parallel, concave

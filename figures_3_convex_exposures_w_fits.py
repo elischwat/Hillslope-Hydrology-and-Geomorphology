@@ -12,13 +12,15 @@ from plotWaterTablePlanar import plotWaterTablePlanar
 from parameters import *
 from exposure import exposure
 from getDenudationRate import getDenudationRate
+from DefaultParams import DenudationParameters
+
 plt.figure(figsize=figDimSmall)
 
 x = np.linspace(0,L,xRes)
 #convert from 1 storm long exposure time to annual denudation (in meters)
 timeLength = 1 #year
 def convert(exp):
-    return stormsPerYear*(exp + Tr)*getDenudationRate()*timeLength
+    return stormsPerYear*(exp + Tr)*getDenudationRate(*(DenudationParameters.kwargs_array))*timeLength
 
 plt.subplot(3,1,1)
 yCon = convert(exposure('con','convex'))
